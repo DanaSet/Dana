@@ -9,10 +9,84 @@
 
     <TextView
         android:id="@+id/tvTanggal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tanggal"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvUang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTanggal"
+        android:layout_marginTop="52dp"
+        android:text="Uang"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPengeluaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUang"
+        android:layout_marginTop="30dp"
+        android:text="Pengeluaran:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMakan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPengeluaran"
+        android:layout_marginTop="21dp"
+        android:text="Makan" />
+
+    <TextView
+        android:id="@+id/tvKebutuhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMakan"
+        android:layout_marginTop="21dp"
+        android:text="Kebutuhan" />
+
+    <TextView
+        android:id="@+id/tvUrgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvKebutuhan"
+        android:layout_marginTop="21dp"
+        android:text="Urgent" />
+
+    <TextView
+        android:id="@+id/tvPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUrgent"
+        android:layout_marginTop="30dp"
+        android:text="Pemasukan:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTabungan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPemasukan"
+        android:layout_marginTop="21dp"
+        android:text="Tabungan" />
+
+    <Button
+        android:id="@+id/btnOke"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/tvTabungan"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="24dp"
+        android:text="Oke" />
 
 </RelativeLayout>
