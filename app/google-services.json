@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "343658756619",
+    "firebase_url": "https://duitku-de82c.firebaseio.com",
+    "project_id": "duitku-de82c",
+    "storage_bucket": "duitku-de82c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343658756619:android:70bfbfe7599c1c7c79650e",
+        "android_client_info": {
+          "package_name": "com.example.duitku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343658756619-551v52eons3jmhbuifsa2ntpb3fpef5e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.duitku",
+            "certificate_hash": "ed03291b3bf2314ad5510394ae08c215ceff1a07"
+          }
+        },
+        {
+          "client_id": "343658756619-sd94nhrnvh4qu2bn89fa17a1eciscq5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWhlaKxkVGZxgSxt1GDcSaqKvEXCIUdXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343658756619-sd94nhrnvh4qu2bn89fa17a1eciscq5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
