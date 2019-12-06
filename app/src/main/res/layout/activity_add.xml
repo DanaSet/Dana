@@ -81,20 +81,6 @@
         android:text="Tabungan"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btnOke"
-        android:layout_width="72dp"
-        android:layout_height="36dp"
-        android:layout_below="@+id/etTabungan"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="0dp"
-        android:text="Oke" />
-
     <EditText
         android:id="@+id/etUang"
         android:layout_width="wrap_content"
@@ -153,5 +139,45 @@
         android:ems="10"
         android:inputType="number"
         android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnHitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etTabungan"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="58dp"
+        android:text="Hitung" />
+
+    <TextView
+        android:id="@+id/tvSisaUang"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTabungan"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="80dp"
+        android:text="Sisa Uang" />
+
+    <TextView
+        android:id="@+id/tvSisa"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/etTabungan"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="75dp"
+        android:layout_toEndOf="@+id/tvSisaUang"
+        android:text="Sisa" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnHitung"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="88dp"
+        android:text="OK" />
 
 </RelativeLayout>
