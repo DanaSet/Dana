@@ -7,12 +7,14 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import android.widget.Button;
 
 public class AddActivity extends AppCompatActivity {
     TextView tvTanggal;
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
     String date;
+    private onFragmentInteractionListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
