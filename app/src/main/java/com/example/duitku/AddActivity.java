@@ -2,6 +2,7 @@ package com.example.duitku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import android.widget.Button;
 
-public class AddActivity extends AppCompatActivity {
+public class AddActivity<onFragmentInteractionListener> extends AppCompatActivity {
     TextView tvTanggal;
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
@@ -26,6 +27,7 @@ public class AddActivity extends AppCompatActivity {
     private EditText etTabungan;
     private TextView tvSisa;
     private Button btnHitung;
+    private Button btnOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class AddActivity extends AppCompatActivity {
         etTabungan =findViewById(R.id.etTabungan);
         tvSisa = findViewById(R.id.tvSisa);
         btnHitung = findViewById(R.id.btnHitung);
+        btnOk=findViewById(R.id.btnOk);
 
 
 
@@ -63,5 +66,11 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    public void handleOut(View view) {
+        Intent intent =  new Intent(this, Main2Activity.class);
+        startActivity(intent);
     }
 }

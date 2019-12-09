@@ -19,10 +19,9 @@ public class Main2Activity extends AppCompatActivity implements
         resultFragment = new ResultFragment();
     }
 
+
     @Override
     public void onTryAgainButtonClicked(String tag) {
-        Intent  intent = new Intent(this, SisaUangActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Perhitungan Sisa Uang", Toast.LENGTH_SHORT).show();
+
     }
 }
