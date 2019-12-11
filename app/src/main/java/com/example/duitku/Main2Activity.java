@@ -44,7 +44,7 @@ public class Main2Activity extends AppCompatActivity {
         RefreshList();
     }
 
-    private void RefreshList() {
+    protected void RefreshList() {
         SQLiteDatabase db = dbKeuangan.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM uang", null);
         tambah = new String[cursor.getCount()];

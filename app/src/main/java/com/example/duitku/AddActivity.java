@@ -3,6 +3,8 @@ package com.example.duitku;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,9 +13,13 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import android.widget.Button;
+
+import android.widget.Toast;
 
 public class AddActivity<onFragmentInteractionListener> extends AppCompatActivity {
+    Cursor cursor;
+    DataHelper dbKeuangan;
+
     TextView tvTanggal;
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
@@ -28,6 +34,8 @@ public class AddActivity<onFragmentInteractionListener> extends AppCompatActivit
     private TextView tvSisa;
     private Button btnHitung;
     private Button btnOk;
+    private Button btnSimpan;
+    private Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +58,8 @@ public class AddActivity<onFragmentInteractionListener> extends AppCompatActivit
         tvSisa = findViewById(R.id.tvSisa);
         btnHitung = findViewById(R.id.btnHitung);
         btnOk=findViewById(R.id.btnOk);
-
+        btnSimpan=findViewById(R.id.btnSimpan);
+        btnDelete=findViewById(R.id.btnDelete);
 
 
         btnHitung.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +75,46 @@ public class AddActivity<onFragmentInteractionListener> extends AppCompatActivit
             }
         });
 
+        SQLiteDatabase db = dbKeuangan.getReadableDatabase();
+        cursor = db.rawQuery("SELECT * FROM uang WHERE tanggal = ''" + getIntent().getStringExtra("tvTanggal"),null);
+        cursor.moveToFirst();
 
+        if(cursor.getCount() > 0 ){
+            cursor.moveToPosition(0);
+            etUang.setText(cursor.getString(0).toString());
+            etKebutuhan.setText(cursor.getString(1).toString());
+            etMakan.setText(cursor.getString(2).toString());
+            etUrgent.setText(cursor.getString(3).toString());
+            etTabungan.setText(cursor.getString(4).toString());
+        }
+
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = dbKeuangan.getWritableDatabase();
+                db.execSQL("UPDATE uang SET uang = '"+ etUang.getText().toString() +"', uang_kebutuhan = '" + etKebutuhan.getText().toString()+ "', uang_makan = '" +etMakan.getText().toString()+ "', uang_urgent ='" +etUrgent.getText().toString()+ "'tabungan ='" +etTabungan.getText().toString() + "'");
+                Toast.makeText(getApplicationContext(),"Selesai disimpan", Toast.LENGTH_SHORT).show();
+                Main2Activity.main2Activity.RefreshList();
+                finish();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = dbKeuangan.getWritableDatabase();
+                db.execSQL("DELETE FROM uang WHERE tanggal ='" + getIntent().getStringExtra("tanggal") +"'");
+                Toast.makeText(getApplicationContext(),"Data Telah Dihapus", Toast.LENGTH_SHORT).show();
+                Main2Activity.main2Activity.RefreshList();
+                finish();
+            }
+        });
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     public void handleOut(View view) {
